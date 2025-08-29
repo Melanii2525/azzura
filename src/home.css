@@ -192,13 +192,13 @@ body {
   width: 95%;
   max-width: 1400px;
   min-height: 20vh;
-  transition: transform 0.5s, box-shadow 0.5s;
+  transition: transform 0.8s, box-shadow 0.8s;
   margin-bottom: 20px;
 }
 
 .profile-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 30px 80px rgba(0,0,0,0.8);
+  transform: translateY(-15px);
+  box-shadow: 0 35px 90px rgba(0,0,0,0.8);
 }
 
 .profile-photo {
@@ -354,12 +354,12 @@ body {
   width: 95%;
   max-width: 1400px;
   text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.8s, box-shadow 0.8s;
 }
 
 .contact-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 30px 80px rgba(0,0,0,0.7);
+  transform: translateY(-15px);
+  box-shadow: 0 35px 90px rgba(0,0,0,0.7);
 }
 
 .contact-card h2 {
@@ -536,13 +536,6 @@ body {
     padding: 15px 5px;
   }
 }
-
-/* Hilangkan gambar hero di tablet dan mobile */
-/* @media (max-width: 1024px) {
-  .character {
-    display: none;
-  }
-} */
 
 @media (max-width: 768px) {
   .profile-photo {
