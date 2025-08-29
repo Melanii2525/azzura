@@ -538,11 +538,11 @@ body {
 }
 
 /* Hilangkan gambar hero di tablet dan mobile */
-@media (max-width: 1024px) {
+/* @media (max-width: 1024px) {
   .character {
     display: none;
   }
-}
+} */
 
 @media (max-width: 768px) {
   .profile-photo {
