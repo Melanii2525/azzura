@@ -90,7 +90,7 @@ const Home = () => {
 
         <div className="title-right animate-on-scroll">FOLIO</div>
         <div className="subtitle-right animate-on-scroll">
-          FRONTEND DEVELOPER
+          FULLSTACK DEVELOPER
         </div>
       </section>
 
@@ -144,7 +144,7 @@ const Home = () => {
                 Melani Azzura Najma
               </h1>
               <h2 className="fadeUp" style={{ animationDelay: "0.4s" }}>
-                Frontend Developer
+                Fullstack Developer
               </h2>
               <p className="fadeUp" style={{ animationDelay: "0.6s" }}>
               I am a vocational school student majoring in Software Engineering with a deep interest in application and website development.
@@ -156,13 +156,10 @@ const Home = () => {
               <h3 className="skill-title">Skills</h3>
               <div className="profile-skills">
                 <div className="skill fadeUp" style={{ animationDelay: "0.4s" }}>
-                  Web Design
-                </div>
-                <div className="skill fadeUp" style={{ animationDelay: "0.5s" }}>
-                  UI/UX Design
+                  Fullstack Web Development
                 </div>
                 <div className="skill fadeUp" style={{ animationDelay: "0.6s" }}>
-                  Editing
+                  UI/UX Design & Implementation
                 </div>
                 <div className="skill fadeUp" style={{ animationDelay: "0.7s" }}>
                   Mobile Development
@@ -170,9 +167,7 @@ const Home = () => {
               </div>
 
               {/* Programming / Framework */}
-              <h3 className="skill-title">
-                Programming Languages & Frameworks
-              </h3>
+              <h3 className="skill-title">Programming Languages & Frameworks</h3>
               <div className="profile-skills">
                 <div className="skill fadeUp" style={{ animationDelay: "0.8s" }}>
                   HTML
@@ -184,13 +179,22 @@ const Home = () => {
                   JavaScript
                 </div>
                 <div className="skill fadeUp" style={{ animationDelay: "1.1s" }}>
-                  PHP
+                  React.js
                 </div>
                 <div className="skill fadeUp" style={{ animationDelay: "1.2s" }}>
-                  React
+                  Node.js & Express.js
                 </div>
                 <div className="skill fadeUp" style={{ animationDelay: "1.3s" }}>
-                  CodeIgniter
+                  PHP & CodeIgniter
+                </div>
+                <div className="skill fadeUp" style={{ animationDelay: "1.4s" }}>
+                  MySQL & MongoDB
+                </div>
+                <div className="skill fadeUp" style={{ animationDelay: "1.5s" }}>
+                  Git & GitHub
+                </div>
+                <div className="skill fadeUp" style={{ animationDelay: "1.6s" }}>
+                  Flutter
                 </div>
               </div>
             </div>
@@ -224,19 +228,26 @@ const Home = () => {
               }}
             >
               <div
-                className="contact-item fadeUp"
-                style={{ animationDelay: "0.4s", textAlign: "center" }}
-              >
-                <a
-                  href="https://mail.google.com/mail/?view=cm&fs=1&to=dozukim@gmail.com"
-                  target="_blank"
-                  className="contact-icon"
-                  rel="noreferrer"
-                >
-                  <FaEnvelope />
-                </a>
-                <p>Email</p>
-              </div>
+  className="contact-item fadeUp"
+  style={{ animationDelay: "0.4s", textAlign: "center" }}
+>
+  <a
+    href="mailto:dozukim@gmail.com"
+    className="contact-icon"
+    onClick={(e) => {
+      // Tunggu sedikit lalu arahkan ke Gmail Web jika mailto gagal
+      setTimeout(() => {
+        window.open(
+          "https://mail.google.com/mail/?view=cm&fs=1&to=dozukim@gmail.com",
+          "_blank"
+        );
+      }, 800);
+    }}
+  >
+    <FaEnvelope />
+  </a>
+  <p>Email</p>
+</div>
 
               <div
                 className="contact-item fadeUp"

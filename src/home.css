@@ -194,6 +194,8 @@ body {
   min-height: 20vh;
   transition: transform 0.8s, box-shadow 0.8s;
   margin-bottom: 20px;
+  align-items: stretch; 
+  height: 100%;
 }
 
 .profile-card:hover {
@@ -204,8 +206,8 @@ body {
 .profile-photo {
   flex: 1 1 300px;
   max-width: 350px;
-  height: auto;
-  aspect-ratio: 3/4; /* Portrait default */
+  height: 100%;
+  aspect-ratio: 3/5; /* Portrait default */
   border-radius: 20px;
   object-fit: cover;
   transition: transform 0.5s, box-shadow 0.5s;
@@ -336,7 +338,7 @@ body {
 .star2 { top:30%; right:10%; animation-delay:1s; }
 .star3 { bottom:20%; left:25%; animation-delay:2s; }
 .star4 { bottom:10%; right:20%; animation-delay:3s; }
-.star5 { top:55%; left:50%; animation-delay:1.5s; }
+.star5 { top:60%; left:50%; animation-delay:1.5s; }
 
 @keyframes twinkle {
   0%, 100% { opacity:0.3; transform: scale(0.8); }
@@ -348,7 +350,7 @@ body {
   background: rgba(255,255,255,0.05);
   backdrop-filter: blur(15px);
   border-radius: 20px;
-  padding: 50px 40px;
+  padding: 80px 40px;
   box-shadow: 0 20px 60px rgba(0,0,0,0.6);
   border: 1px solid rgba(255,255,255,0.1);
   width: 95%;
@@ -533,7 +535,7 @@ body {
 @media (max-width: 768px) {
   .footer {
     font-size: 12px;
-    padding: 15px 5px;
+    padding: 10px 10px;
   }
 }
 
@@ -567,6 +569,7 @@ body {
   .profile-card {
     gap: 30px;
     padding: 50px 30px;
+    margin-bottom: -5px; /* Tambahan ruang bawah */
   }
 
   .profile-info {
@@ -606,5 +609,90 @@ body {
 
   .contact-card {
     padding: 30px 20px;
+  }
+}
+
+/* Light Mode */
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: #f0f0f0; /* abu muda, tidak terlalu putih */
+    color: #222;
+    position: relative;
+  }
+
+  /* Overlay gelap tipis di seluruh halaman */
+  body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.05); /* overlay tipis */
+    z-index: -1;
+  }
+
+  .image-bg {
+    opacity: 0.15;
+    filter: grayscale(10%);
+  }
+
+  /* Judul kiri-kanan */
+  .title-left,
+  .title-right {
+    -webkit-text-stroke: 2px #333;
+  }
+
+  /* Subtitle & teks utama */
+  .subtitle-left,
+  .subtitle-right,
+  .profile-info h1,
+  .profile-info h2,
+  .profile-info p,
+  .contact-card h2,
+  .contact-card p,
+  .footer {
+    color: #222;
+  }
+
+  /* Card profile dan contact */
+  .profile-card,
+  .contact-card {
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Title skill */
+  .skill-title {
+    color: #333;
+  }
+
+  /* Badge skill & language */
+  .skill,
+  .language {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: #222;
+  }
+
+  .skill:hover,
+  .language:hover {
+    background: linear-gradient(145deg, #6C7A89, #D6C8B0);
+    color: #fff;
+  }
+
+  /* Link kontak */
+  .contact-info a {
+    color: #6C7A89;
+  }
+
+  .contact-info a:hover {
+    color: #222;
+  }
+
+  /* Bintang dekorasi */
+  .star {
+    background: #444; /* warna gelap agar terlihat */
+    filter: drop-shadow(0 0 6px rgba(100, 100, 100, 0.6));
   }
 }
