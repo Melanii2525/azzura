@@ -60,6 +60,25 @@ const Home = () => {
     setIsPlaying(!isPlaying);
   };
 
+  // === Stop musik saat pengguna keluar dari tab atau halaman ===
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      const audio = audioRef.current;
+      if (!audio) return;
+
+      if (document.hidden && isPlaying) {
+        audio.pause();
+        setIsPlaying(false);
+      }
+    };
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+
+    return () => {
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+    };
+  }, [isPlaying]);
+
   return (
     <div>
       {/* Background */}
@@ -228,26 +247,26 @@ const Home = () => {
               }}
             >
               <div
-  className="contact-item fadeUp"
-  style={{ animationDelay: "0.4s", textAlign: "center" }}
->
-  <a
-    href="mailto:dozukim@gmail.com"
-    className="contact-icon"
-    onClick={(e) => {
-      // Tunggu sedikit lalu arahkan ke Gmail Web jika mailto gagal
-      setTimeout(() => {
-        window.open(
-          "https://mail.google.com/mail/?view=cm&fs=1&to=dozukim@gmail.com",
-          "_blank"
-        );
-      }, 800);
-    }}
-  >
-    <FaEnvelope />
-  </a>
-  <p>Email</p>
-</div>
+                className="contact-item fadeUp"
+                style={{ animationDelay: "0.4s", textAlign: "center" }}
+              >
+                <a
+                  href="mailto:dozukim@gmail.com"
+                  className="contact-icon"
+                  onClick={(e) => {
+                    // Tunggu sedikit lalu arahkan ke Gmail Web jika mailto gagal
+                    setTimeout(() => {
+                      window.open(
+                        "https://mail.google.com/mail/?view=cm&fs=1&to=dozukim@gmail.com",
+                        "_blank"
+                      );
+                    }, 800);
+                  }}
+                >
+                  <FaEnvelope />
+                </a>
+                <p>Email</p>
+              </div>
 
               <div
                 className="contact-item fadeUp"
